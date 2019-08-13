@@ -154,6 +154,16 @@ github 下载地址: [freeswitch-sound-cn](https://github.com/log2k/freeswitch-s
 git clone https://github.com/log2k/freeswitch-sound-cn.git
 cp -R freeswitch-sound-cn /usr/local/freeswitch/sounds
 ```
+* 安装php phalcon 扩展
+```
+ tar -zxvf phalcon-2.0.12.tar.gz
+ cd phalcon-2.0.12/build
+ ./install
 
-systemctl restart  php-fpm.service //启动
-systemctl enable php-fpm.service //开机启动
+```
+* 设置开机启动
+```
+systemctl restart  php-fpm.service
+systemctl enable php-fpm.service
+```
+
