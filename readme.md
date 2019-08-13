@@ -137,7 +137,12 @@ gpgkey=http://pkgrepo.linuxtech.net/el6/release/RPM-GPG-KEY-LinuxTECH.NET
  chown -R apache:apache /usr/local/freeswitch
 ```
 
-
+* 安装php phalcon 扩展
+```
+ tar -zxvf phalcon-2.0.12.tar.gz
+ cd phalcon-2.0.12/build
+ ./install
+```
 
 * 安装 ESL PHP模块
 ```sehll
@@ -159,16 +164,12 @@ github 下载地址: [freeswitch-sound-cn](https://github.com/log2k/freeswitch-s
 git clone https://github.com/log2k/freeswitch-sound-cn.git
 cp -R freeswitch-sound-cn /usr/local/freeswitch/sounds
 ```
-* 安装php phalcon 扩展
-```
- tar -zxvf phalcon-2.0.12.tar.gz
- cd phalcon-2.0.12/build
- ./install
 
-```
 * 设置开机启动
 ```
-systemctl restart  php-fpm.service
-systemctl enable php-fpm.service
+systemctl restart php-fpm
+systemctl enable php-fpm
+systemctl restart nginx
+systemctl enable nginx
 ```
 
