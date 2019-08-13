@@ -50,6 +50,11 @@ fs.mqueue.queues_max = 256
 * hard nproc unlimited
 ```
 
+* 关闭 selinux
+```
+sed -i '/SELINUX/s/enforcing/disabled/' /etc/selinux/config 
+```
+
 * 安装 yum 源 epel-release
 ```shell
  yum -y install epel-release
