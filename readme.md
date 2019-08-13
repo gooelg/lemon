@@ -154,3 +154,6 @@ github 下载地址: [freeswitch-sound-cn](https://github.com/log2k/freeswitch-s
 git clone https://github.com/log2k/freeswitch-sound-cn.git
 cp -R freeswitch-sound-cn /usr/local/freeswitch/sounds
 ```
+
+systemctl restart  php-fpm.service //启动
+systemctl enable php-fpm.service //开机启动
