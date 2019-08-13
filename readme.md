@@ -104,19 +104,6 @@ fs.mqueue.queues_max = 256
 ```
 * 编译安装 FreeSWITCH
 ```shell
- vi /etc/yum.repos.d/linuxtech.repo:
-    ```
-    [linuxtech]
-    name=LinuxTECH
-    baseurl=http://pkgrepo.linuxtech.net/el6/release/
-    enabled=1
-    gpgcheck=1
-    gpgkey=http://pkgrepo.linuxtech.net/el6/release/RPM-GPG-KEY-LinuxTECH.NET
-    ```
- yum install libopus-devel
-
-
-
  wget http://files.freeswitch.org/freeswitch-releases/freeswitch-1.6.10.tar.gz
  tar -zxvf freeswitch-1.6.10.tar.gz
  cd freeswitch-1.6.10
@@ -131,6 +118,21 @@ fs.mqueue.queues_max = 256
  chown -R apache:apache /var/freeswitch
  chown -R apache:apache /usr/local/freeswitch
 ```
+*以上安装报错 You must install libopus-dev to build mod_opus. Stop.
+```shell
+vi /etc/yum.repos.d/linuxtech.repo
+[linuxtech]
+name=LinuxTECH
+baseurl=http://pkgrepo.linuxtech.net/el6/release/
+enabled=1
+gpgcheck=1
+gpgkey=http://pkgrepo.linuxtech.net/el6/release/RPM-GPG-KEY-LinuxTECH.NET
+    
+ yum install libopus-devel
+ make clean
+```
+
+
 * 安装 ESL PHP模块
 ```sehll
  cd libs/esl
