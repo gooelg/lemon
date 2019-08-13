@@ -65,6 +65,7 @@ fs.mqueue.queues_max = 256
 ```
 * 安装PHP的redis数据库扩展
 ```shell
+wget https://github.com/phpredis/phpredis/archive/2.2.7.tar.gz
  tar -zxvf phpredis-2.2.7.tar.gz
  cd phpredis-2.2.7
  phpize
