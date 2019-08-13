@@ -142,6 +142,10 @@ gpgkey=http://pkgrepo.linuxtech.net/el6/release/RPM-GPG-KEY-LinuxTECH.NET
  tar -zxvf phalcon-2.0.12.tar.gz
  cd phalcon-2.0.12/build
  ./install
+ vi  /etc/php.d/phalcon.ini
+ ; Enable phalcon extension module
+extension=phalcon.so
+ 
 ```
 
 * 安装 ESL PHP模块
