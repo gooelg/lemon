@@ -79,6 +79,12 @@ sed -i '/SELINUX/s/enforcing/disabled/' /etc/selinux/config
  ./configure
  make
  make install
+ 
+ vi  /etc/php.d/redis.ini
+ 
+; Enable redis extension module
+extension=redis.so
+ 
 ```
 * 安装 PostgreSQL 数据库
 ```shell
@@ -162,6 +168,15 @@ extension=phalcon.so
  make
  make install
 ```
+* 设置开机启动
+```
+systemctl restart php-fpm
+systemctl enable php-fpm
+systemctl restart nginx
+systemctl enable nginx
+systemctl restart  redis
+systemctl enable  redis
+```
 ### FreeSWITCH 中文语音包 (只包含部分中文语音)
 github 下载地址: [freeswitch-sound-cn](https://github.com/log2k/freeswitch-sound-cn/archive/master.zip) 或者 git clone
 ```
@@ -169,11 +184,5 @@ git clone https://github.com/log2k/freeswitch-sound-cn.git
 cp -R freeswitch-sound-cn /usr/local/freeswitch/sounds
 ```
 
-* 设置开机启动
-```
-systemctl restart php-fpm
-systemctl enable php-fpm
-systemctl restart nginx
-systemctl enable nginx
-```
+
 
