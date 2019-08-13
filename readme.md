@@ -68,7 +68,6 @@ fs.mqueue.queues_max = 256
 ```
 * 安装PHP的redis数据库扩展
 ```shell
- wget https://github.com/phpredis/phpredis/archive/2.2.7.tar.gz
  tar -zxvf 2.2.7.tar.gz
  cd phpredis-2.2.7
  phpize
@@ -108,7 +107,6 @@ fs.mqueue.queues_max = 256
  wget http://files.freeswitch.org/freeswitch-releases/freeswitch-1.6.10.tar.gz
  tar -zxvf freeswitch-1.6.10.tar.gz
  cd freeswitch-1.6.10
- emacs modules.conf
  ./configure --disable-debug --disable-libyuv --disable-libvpx --enable-core-pgsql-support
  make
  make install
