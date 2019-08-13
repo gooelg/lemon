@@ -62,6 +62,7 @@ fs.mqueue.queues_max = 256
  yum install -y libdb4* libidn-devel unbound-devel libuuid-devel lua-devel libsndfile-devel gsm gsm-devel
  yum install -y libevent libevent-devel hiredis hiredis-devel libconfig libconfig-devel libjpeg-devel
  yum install -y nginx php php-fpm php-devel php-pgsql php-mcrypt php-mbstring php-pdo php-pgsql redis sqlite-devel
+ yum install -y git
 ```
 * 安装PHP的redis数据库扩展
 ```shell
