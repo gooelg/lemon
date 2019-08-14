@@ -159,6 +159,11 @@ extension=phalcon.so
  cd libs/esl
  make phpmod
  cp php/ESL.so /usr/lib64/php/modules
+ 
+  vi  /etc/php.d/ESL.ini
+ 
+; Enable ESL extension module
+extension=ESL.so
 ```
 
 * 安装 mod_bcg729 语音编码
