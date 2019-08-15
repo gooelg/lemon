@@ -52,7 +52,7 @@ fs.mqueue.queues_max = 256
 
 * 关闭 selinux
 ```
-sed -i '/SELINUX/s/enforcing/disabled/' /etc/selinux/config 
+sed -i "s#SELINUX=enforcing#SELINUX=disabled#g" /etc/selinux/config
 ```
 
 * 安装 yum 源 epel-release
@@ -131,8 +131,15 @@ gpgkey=http://pkgrepo.linuxtech.net/el6/release/RPM-GPG-KEY-LinuxTECH.NET
  wget http://files.freeswitch.org/freeswitch-releases/freeswitch-1.6.10.tar.gz
  tar -zxvf freeswitch-1.6.10.tar.gz
  cd freeswitch-1.6.10
+ 
+ sed -i "s#\#applications/mod_curl#applications/mod_curl#g" modules.conf
+ 
  ./configure --disable-debug --disable-libyuv --disable-libvpx --enable-core-pgsql-support
  make
+ make mod_xml_curl-install
+  cp src/mod/applications/mod_curl/.libs/mod_curl.so /usr/local/freeswitch/mod/
+  cp src/mod/applications/mod_curl/.libs/mod_curl.la /usr/local/freeswitch/mod/
+ 
  make install
  ln -s /usr/local/freeswitch/bin/fs_cli /usr/bin/fs_cli
  ln -s /usr/local/freeswitch/bin/freeswitch /usr/bin/freeswitch
